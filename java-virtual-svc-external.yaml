@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: java-virtual-svc
+  namespace: learn
+spec:
+  hosts:
+    - "java.some-domain.cloud"
+  gateways:
+    - istio-external-gateway
+  http:
+    - route:
+        - destination:
+            host: java-service
+            port:
+              number: 80
+      match:
+        - uri:
+            prefix: /
+
