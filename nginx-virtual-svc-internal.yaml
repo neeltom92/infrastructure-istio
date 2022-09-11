@@ -1,0 +1,22 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: nginx-virtual-svc
+  namespace: learn
+spec:
+  hosts:
+    - "nginx.some-domain.cloud"
+  gateways:
+    - istio-external-gateway
+  http:
+    - route:
+        - destination:
+            host: nginx-service
+            port:
+              number: 80
+      match:
+        - uri:
+            prefix: /
+
+

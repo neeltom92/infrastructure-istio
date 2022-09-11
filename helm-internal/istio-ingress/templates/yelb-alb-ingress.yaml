@@ -27,7 +27,7 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: |
       {{ .Values.certificate_arn }}
     {{- end }}
-  name: gw-ingress
+  name: gw-ingress-internal
   namespace: istio-system
 spec:
   rules:
