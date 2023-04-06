@@ -1,5 +1,5 @@
 1. deployment yaml is same nginx deployment.yaml
-2. you only need to specify the Virtual Service entry only and mention the Gateway in which gw was created 
+2. you only need to specify the Virtual Service entry only , dont again create Istio Gateway , only mention the gw namespace where it was created
 https://fabianlee.org/2021/04/09/kubernetes-istio-gateway-in-a-different-namespace-than-virtualservice/
 refer :
 
