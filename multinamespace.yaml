@@ -1,0 +1,28 @@
+1. deployment yaml is same nginx deployment.yaml
+2. you only need to specify the Virtual Service entry only and mention the Gateway in which gw was created 
+https://fabianlee.org/2021/04/09/kubernetes-istio-gateway-in-a-different-namespace-than-virtualservice/
+refer :
+
+```bash
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: nginx-virtual-svc
+  namespace: learn
+spec:
+  hosts:
+    - "nginxtest.dview.io"
+  gateways:
+    - dview/istio-external-gateway
+  http:
+    - route:
+        - destination:
+            host: nginx-service
+            port:
+              number: 80
+      match:
+        - uri:
+            prefix: /
+
+```
