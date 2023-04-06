@@ -3,7 +3,7 @@
 https://fabianlee.org/2021/04/09/kubernetes-istio-gateway-in-a-different-namespace-than-virtualservice/
 refer :
 
-```bash
+
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -25,4 +25,3 @@ spec:
         - uri:
             prefix: /
 
-```
